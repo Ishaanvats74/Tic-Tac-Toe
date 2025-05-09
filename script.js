@@ -32,12 +32,12 @@ const checkWin = ()=>{
             document.querySelector(".info").innerText = boxText[e[0]].innerText + ' Won';
             document.getElementById('gif').style.width = "300px";
             isgameOver = true;
+            gameOver.play();
         } 
     })
 };
 
 // Game logic
- 
 let boxes = document.getElementsByClassName('box');
 Array.from(boxes).forEach(element=>{
     let boxText = element.querySelector('.boxText');
@@ -61,3 +61,14 @@ MusicBackground.addEventListener('click', ()=>{
         backgroundMusic.pause();
     };
 });
+
+
+reset.addEventListener('click',()=>{
+    let boxTexts = document.getElementsByClassName('boxText');
+    Array.from(boxTexts).forEach(element=>{
+        element.innerText = "";
+    });
+    turn = "X";
+    document.getElementById('gif').style.width = "0px";
+    document.getElementsByClassName("info")[0].innerText = "Turn for " + turn ; 
+})
