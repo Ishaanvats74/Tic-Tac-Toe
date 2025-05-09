@@ -1,87 +1,135 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Varela&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Varela&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Varela&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Varela&display=swap");
 
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
-nav{
-    background-color: black;
-    color: white;
-    height: 65px;
-    font-size: 50px;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    font-family: "Roboto", sans-serif;
-}
-
-nav ul{
-    list-style-type: none;
+nav {
+  background-color: black;
+  color: white;
+  height: 65px;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  font-family: "Roboto", sans-serif;
 }
 
-.gameContainer{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+nav ul {
+  list-style-type: none;
 }
 
-.container{
-    display: grid;
-    grid-template-rows: repeat(3,10vw);
-    grid-template-columns: repeat(3,10vw);
-    font-family: "Roboto", sans-serif;
+.gameContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-.box{
-    border: 2px solid black;
-    font-size: 8vw;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.box:hover{
-    background-color: rgb(227, 220, 235);
-    
+.container {
+  display: grid;
+  grid-template-rows: repeat(3, 10vw);
+  grid-template-columns: repeat(3, 10vw);
+  font-family: "Roboto", sans-serif;
+  position: relative;
 }
 
-.gameInfo{
-    padding: 0 50px;
-    font-family: "Baloo Bhaina 2", cursive;
+.box {
+  border: 2px solid black;
+  font-size: 8vw;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box:hover {
+  background-color: rgb(227, 220, 235);
 }
 
-#gif{
+.info {
+  font-size: 22px;
+}
+.gameInfo {
+  padding: 0 50px;
+  font-family: "Baloo Bhaina 2", cursive;
+}
+.gameInfo h1 {
+  font-size: 2.5rem;
+}
+
+#gif {
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+.br-0 {
+  border-right: 0;
+}
+.bl-0 {
+  border-left: 0;
+}
+.bt-0 {
+  border-top: 0;
+}
+.bb-0 {
+  border-bottom: 0;
+}
+
+#reset {
+  margin: 0 23px;
+  padding: 1px 18px;
+  background-color: rgb(244, 199, 244);
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Baloo Bhaina 2", cursive;
+  font-weight: bolder;
+  font-size: 15px;
+}
+#reset:hover {
+  background-color: rgb(246, 185, 246);
+}
+#MusicBackground {
+  margin: 0 23px;
+  padding: 1px 18px;
+  background-color: rgb(244, 199, 244);
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Baloo Bhaina 2", cursive;
+  font-weight: bolder;
+  font-size: 15px;
+}
+#MusicBackground:hover {
+  background-color: rgb(246, 185, 246);
+}
+
+.line{
+    background-color: blue;
     width: 0;
-    transition: width 1s ease-in-out;
+    height: 3px;
+    position: absolute;
+    transition: width 0.5s ease-in-out;
 }
 
-.br-0{
-    border-right: 0;
-}
-.bl-0{
-    border-left: 0;
-}
-.bt-0{
-    border-top: 0;
-}
-.bb-0{
-    border-bottom: 0;
-}
+@media screen and (max-width: 950px) {
+  .gameContainer {
+    flex-wrap: wrap;
+  }
+  .gameInfo {
+    margin-top: 34px;
+  }
+  .gameInfo h1 {
+    font-size: 1.5rem;
+  }
 
-#reset{
-    margin: 0 23px;
-    padding: 1px 18px;
-    background-color: rgb(244, 199, 244);
-    border-radius: 10px;
-    cursor: pointer;
-    font-family: "Baloo Bhaina 2", cursive;
-    font-weight: bolder;
-    font-size: 15px;
-}
-#reset:hover{
-    background-color: rgb(246, 185, 246);
-}
-.info{
-    font-size:  22px;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 20vw);
+    grid-template-rows: repeat(3, 20vw);
+    margin-right: 20px;
+  }
+  nav {
+    font-size: 30px;
+    padding: 0 20px;
+    width: auto;
+  }
 }
